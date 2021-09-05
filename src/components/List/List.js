@@ -25,9 +25,9 @@ class List extends React.Component {
         </div>
 
         <div className={styles.columns}>
-          <Column />
-          <Column />
-          <Column />
+          <Column titleText={this.props.titleA} />
+          <Column titleText={this.props.titleM} />
+          <Column titleText={this.props.titleP} />
         </div>
         
       </section>

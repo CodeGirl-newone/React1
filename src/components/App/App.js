@@ -13,6 +13,8 @@ class App extends React.Component {
         <List title={['Napis w App.js ', <sup key='1'>soon!</sup>]}> 
         </List>
 
+        <List title='Animals'> 
+        </List>
         
         
       </main>
@@ -21,3 +23,6 @@ class App extends React.Component {
 }
 
 export default App;
+
+
+//jak zmienic tytuły w kolumnach

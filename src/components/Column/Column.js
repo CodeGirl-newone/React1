@@ -8,8 +8,7 @@ class Column extends React.Component {
   render() {
     return (
       <section className={styles.component}>
-        <h3 className={styles.title}>Napis w kolumnie</h3>
-      
+        <h3 className={styles.title}>Tytuł</h3>
       </section>
 
       
@@ -17,5 +16,10 @@ class Column extends React.Component {
     )
   }
 }
+
+Column.propTypes = {
+  titleText: PropTypes.node.isRequired,
+};
+
 
 export default Column;
