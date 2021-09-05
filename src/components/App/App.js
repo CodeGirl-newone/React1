@@ -9,9 +9,13 @@ class App extends React.Component {
       <main className={styles.component}>
         <h1 className={styles.title}>My first React app</h1>
         <h2 className={styles.subtitle}>Hello world!</h2>
-        <List />
-      </main>
+        
+        <List title={['Napis w App.js ', <sup key='1'>soon!</sup>]}> 
+        </List>
 
+        
+        
+      </main>
     )
   }
 }
