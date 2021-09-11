@@ -8,7 +8,7 @@ class Column extends React.Component {
   render() {
     return (
       <section className={styles.component}>
-        <h3 className={styles.title}>Tytuł</h3>
+        <h3 className={styles.title}>Tytuł do zmiany</h3>
       </section>
 
       

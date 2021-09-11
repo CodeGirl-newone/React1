@@ -3,16 +3,26 @@ import styles from './List.scss';
 import Hero from '../Hero/Hero.js';
 import PropTypes from 'prop-types';
 import Column from '../Column/Column.js';
+import {settings} from '../../data/dataStore';
+import ReactHtmlParser from 'react-html-parser';
+import Column from '../Creator/Creator.js';
 
 
 class List extends React.Component {
+  state = {
+    columns: this.props.columns || [],
+  }
+  
   static propTypes = {
     title: PropTypes.node.isRequired,
-    children: PropTypes.node.isRequired,
+    description: PropTypes.node,
+    columns: PropTypes.array,
+
   }
 
   static defaultProps = {
-    children: <p>Defaultowy tekst, gdy nie ma opisu Listy. Jest zastępowany, gdy jest opis w komponencie List</p>,
+    description: settings.defaultListDescription,
+    
   }
   
 
@@ -21,15 +31,19 @@ class List extends React.Component {
       <section className={styles.component}>
         <Hero titleText={this.props.title} />
         <div className={styles.description}>
-          {this.props.children}
+          {this.props.description}
         </div>
 
         <div className={styles.columns}>
-          <Column titleText={this.props.titleA} />
-          <Column titleText={this.props.titleM} />
-          <Column titleText={this.props.titleP} />
+        {this.state.columns.map(({key, ...columnProps}) => (
+          <Column key={key} {...columnProps} />
+        ))}
         </div>
         
+        <div className={styles.creator}>
+          <Creator text={settings.columnCreatorText} action={title => this.addColumn(title)}/>
+        </div>
+
       </section>
 
     )
